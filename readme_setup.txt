@@ -92,3 +92,24 @@ module.exports = config;
 8. The webpack-dev-server is up and running.
 
 
+/*** Chap 3 :  First Component ***/
+
+1. Create App class which extends React.Component in index.js file.
+2.  implement what this component shoulf render when used.
+3. Use the above defined component by actually using it in the same file (atleast in this case) by using render{what,where} from render-dom library.
+4. Save & Refresh the page
+
+Note : Only 1 element <div> can be returned by the component in the js!
+And to add some styling, go to getBootstrap.com
+
+
+/** Chap 4 : Multiple Components ***/
+
+1. create 2 js files in new components folder - namely Header.js and Home.js
+2. create navbar in header and plain text in home
+3. import both the components in the index.js and use them as elements
+
+/** Chap 5 : Outputting Dynamic data ***/
+
+/** Chap 6 : Passing data with Props **/
+
