@@ -5,6 +5,13 @@ webpack - helps in bundling the code all ur assets like js, css and also transfo
 Babel - is ES6 (Javascript version) transpiler to ES5.
 
 
+ReactJs - views - single components
+
+Angular JS - JS for single page application
+ control the  navigaton between pages
+ routing support
+
+
 /********************Steps for setup ******************************************************************/
 1. Create a folder with project name.
 2. Download nodejs and Instal nodejs
@@ -112,4 +119,31 @@ And to add some styling, go to getBootstrap.com
 /** Chap 5 : Outputting Dynamic data ***/
 
 /** Chap 6 : Passing data with Props **/
+
+1. Passing data from one component to other using Props - like string, number, array or an object.
+2. Using propTypes for data validation.
+
+
+/** Chap 7 : event - onClick **/
+
+/** Chap 8 : state of the application */
+
+/* Chap 9 : communicating with the dom */
+whole dom doesnt getrerendered.
+reactjs uses virtual dom
+
+/* Chap 10 : stateless components */
+using const from es6 js with the arrow function.
+
+/* Chap 11 : Passing function as prop from parent to child component */
+
+
+
+<li><a href="projects">Projects</a></li>
+               					<li><a href="images">Images</a></li>
+               					<li><a href="about">About</a></li>
+               					<li><a href="settings">Settings</a></li>
+
+
+                         
 
