@@ -7,7 +7,8 @@ export class Home extends React.Component {
 		 this.state = {
 			 age : props.age,
 			 status : 0,
-			 newLinks : ["NewHome" , "NewCareer" , "NewAbout" , "NewSettings"]
+			 newLinks : ["Country" , "Universities" , "About" , "Careers"],
+			 author : props.author
 		 };
 
 		 setTimeout(() => {
@@ -26,6 +27,16 @@ export class Home extends React.Component {
 
       replaceLinks(){
            this.props.changeLinks(this.state.newLinks);
+	  }
+
+	  onChangeHandler(event){
+         this.setState({
+			 author : event.target.value
+		 });
+      } 
+
+	  replaceAuthor(){
+		  this.props.changeAuthor(this.state.author);
 	  }
 
      render(){
@@ -52,6 +63,9 @@ export class Home extends React.Component {
 						</div>	
 						<hr />
 						<div>
+							<input type="text" value={this.state.author} onChange={(event) => this.onChangeHandler(event)}/><hr />
+							<button className = "btn btn-primary" onClick = {this.replaceAuthor.bind(this)}>Change Author</button>
+							<hr />
 							<button className = "btn btn-primary" onClick = {this.replaceLinks.bind(this)}>Change Header Links</button>
 						</div>
      			</div>
@@ -64,5 +78,7 @@ Home.PropTypes = {
 	age : React.PropTypes.number,
 	friend : React.PropTypes.object,
 	greet : React.PropTypes.func,
-	changeLinks : React.PropTypes.func
+	changeLinks : React.PropTypes.func,
+	author : React.PropTypes.string,
+	changeAuthor : React.PropTypes.func
 };

@@ -10,7 +10,8 @@ class App extends React.Component {
     constructor(){
         super();
         this.state = {
-            links : ["Home","Career","About","Settings"]
+            links : ["Home","Career","About","Settings"],
+            author : "Ashwin Prabhu"
         };
     }
 
@@ -24,6 +25,12 @@ class App extends React.Component {
         });
     }
 
+    changeAuthor(newAuthor){
+        this.setState({
+             author : newAuthor
+        });
+    }
+
     render() {
         var siddhesh = {
             name : "Siddhesh",
@@ -33,10 +40,10 @@ class App extends React.Component {
 
     	return (
              <div className = "container">
-             
+
                   <div className = "row">
                      <div className = "col-xs-10 col-xs-offset-1">
-                        <Header2 links={this.state.links}/>
+                        <Header2 links={this.state.links} author={this.state.author}/>
                      </div>
                   </div>
 
@@ -47,7 +54,9 @@ class App extends React.Component {
                       age={27} 
                       friend={siddhesh} 
                       greet={this.greetFriend} 
-                      changeLinks={this.changeLinks.bind(this)}/>
+                      changeLinks={this.changeLinks.bind(this)}
+                      author={this.state.author} 
+                      changeAuthor={this.changeAuthor.bind(this)}/>
                    </div>
                 </div> 
                 

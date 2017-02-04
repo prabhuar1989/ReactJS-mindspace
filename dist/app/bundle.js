@@ -72,49 +72,80 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
 	var App = function (_React$Component) {
-	   _inherits(App, _React$Component);
+	    _inherits(App, _React$Component);
 	
-	   function App() {
-	      _classCallCheck(this, App);
+	    function App() {
+	        _classCallCheck(this, App);
 	
-	      return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
-	   }
+	        var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this));
 	
-	   _createClass(App, [{
-	      key: "render",
-	      value: function render() {
-	         var siddhesh = {
-	            name: "Siddhesh",
-	            age: "28",
-	            hobbies: ["singing", "reading books"]
-	         };
+	        _this.state = {
+	            links: ["Home", "Career", "About", "Settings"],
+	            author: "Ashwin Prabhu"
+	        };
+	        return _this;
+	    }
 	
-	         return _react2.default.createElement(
-	            "div",
-	            { className: "container" },
-	            _react2.default.createElement(
-	               "div",
-	               { className: "row" },
-	               _react2.default.createElement(
-	                  "div",
-	                  { className: "col-xs-10 col-xs-offset-1" },
-	                  _react2.default.createElement(_Header2.Header2, null)
-	               )
-	            ),
-	            _react2.default.createElement(
-	               "div",
-	               { className: "row" },
-	               _react2.default.createElement(
-	                  "div",
-	                  { className: "col-xs-10 col-xs-offset-1" },
-	                  _react2.default.createElement(_Home.Home, { name: "Ashwin", age: 27, friend: siddhesh })
-	               )
-	            )
-	         );
-	      }
-	   }]);
+	    _createClass(App, [{
+	        key: "greetFriend",
+	        value: function greetFriend() {
+	            alert("Hello friends !!");
+	        }
+	    }, {
+	        key: "changeLinks",
+	        value: function changeLinks(newLinks) {
+	            this.setState({
+	                links: newLinks
+	            });
+	        }
+	    }, {
+	        key: "changeAuthor",
+	        value: function changeAuthor(newAuthor) {
+	            this.setState({
+	                author: newAuthor
+	            });
+	        }
+	    }, {
+	        key: "render",
+	        value: function render() {
+	            var siddhesh = {
+	                name: "Siddhesh",
+	                age: "28",
+	                hobbies: ["singing", "reading books"]
+	            };
 	
-	   return App;
+	            return _react2.default.createElement(
+	                "div",
+	                { className: "container" },
+	                _react2.default.createElement(
+	                    "div",
+	                    { className: "row" },
+	                    _react2.default.createElement(
+	                        "div",
+	                        { className: "col-xs-10 col-xs-offset-1" },
+	                        _react2.default.createElement(_Header2.Header2, { links: this.state.links, author: this.state.author })
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    "div",
+	                    { className: "row" },
+	                    _react2.default.createElement(
+	                        "div",
+	                        { className: "col-xs-10 col-xs-offset-1" },
+	                        _react2.default.createElement(_Home.Home, {
+	                            name: "Ashwin",
+	                            age: 27,
+	                            friend: siddhesh,
+	                            greet: this.greetFriend,
+	                            changeLinks: this.changeLinks.bind(this),
+	                            changeAuthor: this.changeAuthor.bind(this) })
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+	
+	    return App;
 	}(_react2.default.Component);
 	
 	(0, _reactDom.render)(_react2.default.createElement(App, null), window.document.getElementById("app"));
@@ -22201,7 +22232,7 @@
 	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
-	             value: true
+	  value: true
 	});
 	exports.Header2 = undefined;
 	
@@ -22212,67 +22243,43 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var Header2 = exports.Header2 = function Header2(props) {
-	             return _react2.default.createElement(
-	                          "nav",
-	                          { className: "navbar navbar-default" },
-	                          _react2.default.createElement(
-	                                       "div",
-	                                       { className: "container" },
-	                                       _react2.default.createElement(
-	                                                    "div",
-	                                                    { className: "navbar-header" },
-	                                                    _react2.default.createElement(
-	                                                                 "ul",
-	                                                                 { className: "nav nav-tabs" },
-	                                                                 _react2.default.createElement(
-	                                                                              "li",
-	                                                                              null,
-	                                                                              _react2.default.createElement(
-	                                                                                           "a",
-	                                                                                           { href: "home" },
-	                                                                                           "Home"
-	                                                                              )
-	                                                                 ),
-	                                                                 _react2.default.createElement(
-	                                                                              "li",
-	                                                                              null,
-	                                                                              _react2.default.createElement(
-	                                                                                           "a",
-	                                                                                           { href: "projects" },
-	                                                                                           "Projects"
-	                                                                              )
-	                                                                 ),
-	                                                                 _react2.default.createElement(
-	                                                                              "li",
-	                                                                              null,
-	                                                                              _react2.default.createElement(
-	                                                                                           "a",
-	                                                                                           { href: "images" },
-	                                                                                           "Images"
-	                                                                              )
-	                                                                 ),
-	                                                                 _react2.default.createElement(
-	                                                                              "li",
-	                                                                              null,
-	                                                                              _react2.default.createElement(
-	                                                                                           "a",
-	                                                                                           { href: "about" },
-	                                                                                           "About"
-	                                                                              )
-	                                                                 ),
-	                                                                 _react2.default.createElement(
-	                                                                              "li",
-	                                                                              null,
-	                                                                              _react2.default.createElement(
-	                                                                                           "a",
-	                                                                                           { href: "settings" },
-	                                                                                           "Settings"
-	                                                                              )
-	                                                                 )
-	                                                    )
-	                                       )
-	                          )
-	             );
+	  return _react2.default.createElement(
+	    "nav",
+	    { className: "navbar navbar-default" },
+	    _react2.default.createElement(
+	      "div",
+	      { className: "container" },
+	      _react2.default.createElement(
+	        "div",
+	        { className: "navbar-header" },
+	        _react2.default.createElement(
+	          "ul",
+	          { className: "nav nav-tabs" },
+	          props.links.map(function (link, i) {
+	            return _react2.default.createElement(
+	              "li",
+	              { key: i },
+	              _react2.default.createElement(
+	                "a",
+	                { href: link },
+	                link
+	              )
+	            );
+	          })
+	        )
+	      ),
+	      _react2.default.createElement(
+	        "div",
+	        { className: "navbar-header" },
+	        _react2.default.createElement(
+	          "a",
+	          null,
+	          "Author : ",
+	          props.author
+	        )
+	      )
+	    )
+	  );
 	};
 
 /***/ },
@@ -22313,7 +22320,8 @@
 	
 			_this.state = {
 				age: props.age,
-				status: 0
+				status: 0,
+				newLinks: ["NewHome", "NewCareer", "NewAbout", "NewSettings"]
 			};
 	
 			setTimeout(function () {
@@ -22330,6 +22338,11 @@
 				this.setState({
 					age: this.state.age + 3
 				});
+			}
+		}, {
+			key: "replaceLinks",
+			value: function replaceLinks() {
+				this.props.changeLinks(this.state.newLinks);
 			}
 		}, {
 			key: "render",
@@ -22397,6 +22410,26 @@
 								);
 							})
 						)
+					),
+					_react2.default.createElement(
+						"div",
+						null,
+						_react2.default.createElement(
+							"button",
+							{ className: "btn btn-primary", onClick: this.props.greet },
+							"Greet your friend"
+						)
+					),
+					_react2.default.createElement("hr", null),
+					_react2.default.createElement(
+						"div",
+						null,
+						_react2.default.createElement("input", { type: "text", value: this.props.changeAuthor }),
+						_react2.default.createElement(
+							"button",
+							{ className: "btn btn-primary", onClick: this.replaceLinks.bind(this) },
+							"Change Header Links"
+						)
 					)
 				);
 			}
@@ -22408,8 +22441,10 @@
 	Home.PropTypes = {
 		name: _react2.default.PropTypes.string,
 		age: _react2.default.PropTypes.number,
-		firend: _react2.default.PropTypes.object
-	
+		friend: _react2.default.PropTypes.object,
+		greet: _react2.default.PropTypes.func,
+		changeLinks: _react2.default.PropTypes.func,
+		changeAuthor: _react2.default.PropTypes.func
 	};
 
 /***/ }
