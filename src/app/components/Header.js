@@ -1,14 +1,14 @@
 import React from "react";
+import {Link} from "react-router";
 
-export class Header extends React.Component {
-	render() {
+export const Header = (props) => {
 		return(
                <nav className= "navbar navbar-default">
                		<div className= "container">
                			<div className= "navbar-header">
                				<ul className= "nav nav-tabs">
-               					<li><a href="home">Home</a></li>
-               					<li><a href="projects">Projects</a></li>
+								<li><Link to={"/home"} activeStyle={{color : "violet"}}>{props.home}</Link></li>
+								<li><Link to={"/project/8"} activeStyle={{color : "red"}}>Project</Link></li>
                					<li><a href="images">Images</a></li>
                					<li><a href="about">About</a></li>
                					<li><a href="settings">Settings</a></li>
@@ -17,5 +17,8 @@ export class Header extends React.Component {
                		</div>
                </nav>
 			);
+	};
+
+	Header.props = {
+		home : React.PropTypes.string
 	}
-}

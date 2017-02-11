@@ -145,5 +145,85 @@ using const from es6 js with the arrow function.
                					<li><a href="settings">Settings</a></li>
 
 
-                         
+/***** till Chap 14 : initial index.js  *****************/
+
+class App extends React.Component {
+
+    constructor(){
+        super();
+        this.state = {
+            links : ["Home","Career","About","Settings"],
+            author : "Ashwin Prabhu"
+        };
+    }
+
+    greetFriend(){
+        alert("Hello friends !!");
+    }
+
+    changeLinks(newLinks){
+        this.setState({
+            links : newLinks
+        });
+    }
+
+    changeAuthor(newAuthor){
+        this.setState({
+             author : newAuthor
+        });
+    }
+
+    render() {
+        var siddhesh = {
+            name : "Siddhesh",
+            age : "28", 
+            hobbies : ["singing" , "reading books"]
+        }
+
+    	return (
+             <div className = "container">
+
+                  <div className = "row">
+                     <div className = "col-xs-10 col-xs-offset-1">
+                        <Header2 links={this.state.links} author={this.state.author}/>
+                     </div>
+                  </div>
+
+                <div className = "row">
+                   <div className = "col-xs-10 col-xs-offset-1">
+                      <Home 
+                      name={"Ashwin"} 
+                      age={27} 
+                      friend={siddhesh} 
+                      greet={this.greetFriend} 
+                      changeLinks={this.changeLinks.bind(this)}
+                      author={this.state.author} 
+                      changeAuthor={this.changeAuthor.bind(this)}/>
+                   </div>
+                </div> 
+                
+             </div>
+    		);
+    }
+
+}
+
+
+
+
+
+
+/* Chap 14  : Component Lifecycle methods  **/
+
+componentwillMount()
+componentDidMount()
+componentWillReceiveProps(nextProps)
+shouldComponentUpdate()
+componentWillUpdate()
+componentDidUpdate()
+componentWillUnmount()
+
+/** Chap 15 : Introducing Router **/
+ npm install --save react-router
+
 

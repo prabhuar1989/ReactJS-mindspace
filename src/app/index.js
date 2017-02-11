@@ -11,7 +11,8 @@ class App extends React.Component {
         super();
         this.state = {
             links : ["Home","Career","About","Settings"],
-            author : "Ashwin Prabhu"
+            author : "Ashwin Prabhu",
+            //homeMounted : true
         };
     }
 
@@ -24,6 +25,13 @@ class App extends React.Component {
             links : newLinks
         });
     }
+
+   /** changeHomeMounted(){
+        this.setState({
+            homeMounted : !this.state.homeMounted
+        });
+    }
+ ***/
 
     changeAuthor(newAuthor){
         this.setState({
@@ -40,6 +48,12 @@ class App extends React.Component {
 
     	return (
              <div className = "container">
+
+                  <div className = "row">
+                     <div className = "col-xs-10 col-xs-offset-1">
+                        <Header home = "Home"/>
+                     </div>
+                  </div>
 
                   <div className = "row">
                      <div className = "col-xs-10 col-xs-offset-1">
@@ -67,4 +81,3 @@ class App extends React.Component {
 }
 
 render(<App/>, window.document.getElementById("app")); 
-

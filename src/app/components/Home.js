@@ -15,7 +15,7 @@ export class Home extends React.Component {
 			 this.setState({
 				 status : 1
 			 })
-		 },3000);
+		 },5000);
 		}
 		
 	 makeOlder(){
@@ -38,6 +38,37 @@ export class Home extends React.Component {
 	  replaceAuthor(){
 		  this.props.changeAuthor(this.state.author);
 	  }
+
+	  /***lifecycle methods start
+     componentWillMount(){
+		 console.log("component Will Mount");
+	 }
+
+	 componentDidMount(){
+		 console.log("component Did Mount");
+	 }
+
+	 componentWillReceiveProps(nextProps){
+		 console.log("component Will Recieve Props ", nextProps);
+	 }
+
+	 shouldComponentUpdate(nextProps , nextState){
+          console.log("should Component Update ", nextProps, nextState);
+		  return true;
+	 }
+
+	 componentWillUpdate(nextProps, nextState){
+          console.log("component Will Update ", nextProps, nextState);
+	 }
+ 
+	 componentDidUpdate(prevProps, prevState){
+		  console.log("component Did Update ", prevProps, prevSate);
+	 }
+
+	 componentWillUnmount(){
+		  console.log("component Will Unmount");
+	 }
+	  lifecycle methods end**/
 
      render(){
      	return (
